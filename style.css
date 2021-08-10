@@ -1,0 +1,181 @@
+/*Type Selector*/
+h1 {
+	color: red !important;
+	text-align: center;
+	font-size: 2rem;
+	/*rem value - is based on the font-size property of the root element.
+		In this case, the font size of the element is 20px defined by the universal selector. The 'rem' value acts as multiplier of this value.
+
+		The default value of the root element is 16px unless font-size property value is changed.
+
+		'rem' value is like the multiplier for the 'px' value.
+			1rem = 20px*/
+}
+/*Specifity Rule*/
+
+/*Universal Selector (LOWEST selector)- we use the asterisk symbol (*) */
+
+* {
+	font-family: "Courier New", monospace;
+	/*font-family property - changes the style of the font.
+		The value "Courier New" is used as the primary font and the value "monospace" is used as a secondary font when a browser is unable to use the primary font.*/
+	font-size: 20px;
+	/*font-size property - changes -the size of the text.
+		The value '20px' refers to 20 pixels in size.*/
+}
+/*The asterisk "*" symbol is a universal selector and is used to target all elements.*/ 
+
+/*ID Selector (HIGHEST selector)*/
+/*#id-name*/
+
+#zuitt-motto {
+	letter-spacing: 5px;
+	/*letter-spacing property - changes the spaces in between characters of a text.*/
+}
+
+/*Class Selector*/
+/*.class-name*/
+
+.offering-item {
+	text-transform: uppercase;
+	/*text transform property - changes font to a certain case.
+		The value uppercase changes the text to all capitalized letters.*/
+}
+
+/*Attribute Selector*/
+/*tagname[attribute]*/
+
+input[required] {
+	border-width: 2px;
+	border-style: solid;
+	border-color: navy;
+	width: 90%;
+}
+/*Note: The attribute selector only works based on the exact attribute syntax provided in the HTML tag. It is also case sensitive.*/
+
+/*Specificity Rule
+id(highest)
+class
+attribute 
+type
+universal (lowest)
+*/
+
+h3 {
+	letter-spacing: 25px;
+}
+/*id selectors have the  highest priority for selectory. In this example, the styling of the h3 type selector will not work because it has a lesser priority.*/
+
+/*CSS Combinators*/
+/*1. Adjacent Sibling Selector*/
+/*syntax; selector + selector*/
+/*will target the second element if it immediately follows the first element. It separates two selectors and matches the second element only if it immediately follows the first element and both are children of the same parent element.*/
+
+#zuitt-motto + img {
+	height: 300px;
+	width: 300px;
+	border-radius: 150px;
+	/*border-radius property - changes the corners of an element from a sharp to a rounded corner. The higher the value, the rounder the corners are.*/
+}
+
+/*2. Descendant Selector*/
+/*syntax: selector selector*/
+/*combines two selectors such that elements matched by the second selector are selected if they have an ancestor element matching the first selector.*/
+
+#bootcamp-learning-list li {
+	color: #075966; /*HEX, RGB values*/
+}
+
+/*3. General Sibling Selector*/
+/*syntax: selector ~ selector*/
+/*will select the second element if it is a sibling of the first element and it is declared after the first element.*/
+
+
+/*5. Multiple Selector*/
+/*syntax: selector, selector*/
+/*Using a comma (,), all selector will be changed*/
+
+h2 ~ a, a {
+	text-decoration: none;
+	/*text-decoration property - changes lines included in text (e.g. overline, underline and strike through). By default, <a> tags or "anchor tags" have an underline from links.*/
+}
+
+/*4. Child Selector*/
+/*syntax: selector > selector*/
+/*separates selectors and matches only those elements matched by the second selector that are children of elements matched by the first*/
+
+body > section > form > label {
+	color: rgb(0,0,128);
+}
+
+body {
+	background: skyblue;
+	/*background property - changes the color of the background of an element.*/
+}
+
+html {
+	scroll-behavior: smooth;
+	/*scroll-behavior property - changes the scrolling behavior when clicking on anchor tags.
+		The value smooth changes the scrolling behavior of a page jumping from one section to the next to smoothly scroll to a section.*/
+}
+
+nav {
+	background-color: white;
+}
+
+/*selector: hover pseudo class*/
+/*changes the style when hovered over*/
+/*The a:hover pseudo class will change the style of an element when it is hovered over.*/
+a:hover	{
+	background-color: #b4d6de;
+}
+
+div {
+	display: inline-block;
+	/*display property - changes the visual and behavior of an element's box*/
+	/*inline-block value - will allow the <div> element to be inline with sibling elements and occupy the remaining space as if it were a block element*/
+	float: right;
+	/*float property - changes the horizontal alignment of an element to float either to the left or ight of its container*/
+}
+
+section {
+	height: 100vh;
+	/*'vh' value - refers to viewport height. This value is based on a percentage of the browser's screen size and is good to use for elements that we want to have a responsive change in size referencing the browser's screen.*/
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+ol {
+	list-style-type: none;
+	/*changes the bullet point used in a list.
+		none value - will remove the bullet points*/
+}
+
+form {
+	text-align: center;
+	background-color: white;
+
+	border: 2px solid black;
+	/*	2px = border-width
+	  	solid = border-style
+	  	black = border-color
+	*/
+	height: 185px;
+	width: 25vw;
+	position: relative;
+	/*position property - changes the position of an element based on certain criteria. This topic would be better understood after discussing the next session.
+		'relative' value - tells the element to move in relation to it's original position in the HTML document.*/
+	left: 37.25%;
+	/*left property - is used along with the position property to add a certain measurement to the left of an element. The right, top, and bottom properties also function the same way. Though only two at a time is recommended to be used to position elements. Either top or bottom for vertical alignment and the left and right for horizontal alignment.
+		'%' value - is based on the measurement of the parent element. The parent element is the section tatg which is a block element and occupies the full width of the page. In this case, the value of the left property is 37.25% of 100%.*/
+}
+
+button {
+	background-color: #cf0053;
+	color: white;
+	border: 0;
+	border-radius: 15px;
+}
